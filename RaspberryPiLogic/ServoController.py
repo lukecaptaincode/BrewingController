@@ -1,5 +1,5 @@
 from time import sleep
-
+import RPi.GPIO as GPIO
 
 class ServoController:
     environment = "test"
@@ -8,15 +8,14 @@ class ServoController:
 
     def __init__(self, environment):
         self.environment = environment
-        if self.environment != 'test':
-            import RPi.GPIO as GPIO
-            self.classGPIO = GPIO
-            self.classGPIO.setmode(GPIO.BOARD)
-            self.classGPIO.setup(3, GPIO.OUT)
-            self.pwm = self.classGPIO.PWM(3, 50)
-            self.pwm.start(0)
+
 
     def servo_flip(self, is_open):
+        self.classGPIO = GPIO
+        self.classGPIO.setmode(GPIO.BOARD)
+        self.classGPIO.setup(03, GPIO.OUT)
+        self.pwm = self.classGPIO.PWM(03, 50)
+        self.pwm.start(0)
         if self.environment != 'test':
             if is_open:
                 duty = 90 / 18 + 2
