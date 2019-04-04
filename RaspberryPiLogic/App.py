@@ -32,7 +32,7 @@ class App:
     fbController = FirebaseController()
 
 
-componentsToRun = ['temp', 'servo']
+componentsToRun = ['servo']
 app = App
 for comp in componentsToRun:
     comp = threading.Thread(target=app.start_sensor, args=('component', comp))
