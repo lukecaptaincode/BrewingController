@@ -29,7 +29,7 @@ class App:
                 toggle = "true"  # TODO Temp control stuff
                 SocketController(toggle)
 
-    fbController = FirebaseController()
+    #fbController = FirebaseController()
 
 
 componentsToRun = ['servo']
