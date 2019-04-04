@@ -22,9 +22,9 @@ class ServoController:
                 duty = 90 / 18 + 2
             else:
                 duty = 180 / 18 + 2
-            self.classGPIO.output(3, True)
+            self.classGPIO.output(03, True)
             self.pwm.ChangeDutyCycle(duty)
             sleep(1)
-            self.pwm.output(3, False)
+            self.pwm.output(03, False)
             self.pwm.ChangeDutyCycle(0)
         return is_open

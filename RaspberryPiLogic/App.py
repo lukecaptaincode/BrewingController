@@ -10,7 +10,7 @@ from time import sleep
 class App:
 
     def start_sensor(self, component):
-        environment = 'test'
+        environment = 'live'
         sleep_time = 5
         while True:
             if component == 'servo':
