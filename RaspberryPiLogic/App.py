@@ -21,6 +21,7 @@ class App:
                      'heater': {'ison': {'data': False}},
                      'servo': {'ison': {'data': False}}, 'external': {'ison': {'data': False}}}
     fb = FirebaseController()
+    # Comment out on non camera pi
     camera = CameraController('live')
     """
     Gets the status of all sensors from firebase and passes the data into the
@@ -132,7 +133,7 @@ is started , finally a thread to push data to firebase is started, except if
 the external components are being set (external components control their own data post
 as they are not critical)
 """
-componentsToRun = ['camera']
+componentsToRun = ['heater']
 app = App
 try:
     for comp in componentsToRun:
